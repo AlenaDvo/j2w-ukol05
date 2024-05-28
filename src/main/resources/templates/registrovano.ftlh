@@ -10,7 +10,7 @@
 </head>
 <body>
 <main>
-    <div>Dítě se jménem <strong>${jmeno} ${prijmeni}</strong> bylo zaregistrováno.
+    <div>Dítě se jménem <strong>${jmeno} ${prijmeni}</strong> narozené dne <strong>${datumNarozeni?date}</strong> bylo zaregistrováno.
         [#if email?? && email!=""]
             Na e-mail <strong>${email}</strong> bylo zasláno potvrzení.
         [/#if]

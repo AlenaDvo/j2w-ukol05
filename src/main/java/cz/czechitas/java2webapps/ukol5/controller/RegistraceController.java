@@ -32,6 +32,7 @@ public class RegistraceController {
       return new ModelAndView("registrovano")
               .addObject("jmeno", formular.getJmeno())
               .addObject("prijmeni", formular.getPrijmeni())
+              .addObject("datumNarozeni", formular.getDatumNarozeni())
               .addObject("email", formular.getEmail());
     }
 }
