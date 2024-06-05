@@ -15,6 +15,17 @@
             Na e-mail <strong>${email}</strong> bylo zasláno potvrzení.
         [/#if]
     </div>
+    <br>
+    <div>
+        <strong>Vámi vyplněné údaje:</strong><br>
+        Jméno: ${jmeno}<br>
+        Příjmení: ${prijmeni}<br>
+        Datum narození: ${datumNarozeni?date}<br>
+        Pohlaví: ${pohlavi}<br>
+        Turnus: ${turnus}<br>
+        [#if email?? && email!=""]E-mail: ${email}<br>[/#if]
+        [#if telefon?? && telefon!=""]Telefon: ${telefon}<br>[/#if]
+    </div>
 </main>
 </body>
 </html>

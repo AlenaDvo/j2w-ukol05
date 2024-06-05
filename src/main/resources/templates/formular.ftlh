@@ -12,7 +12,7 @@
 <body>
     <main>
         <h1>Registrace na letní dětský tábor</h1>
-        <form method="post" action="/registrovano">
+        <form method="post" action="/">
             <label for="jmeno" class="form-label">Jméno:</label>
             [@spring.formInput path="formular.jmeno" /]
             <div class="error">[@spring.showErrors "<br>"/]</div>
@@ -32,11 +32,11 @@
                 <label for="pohlavi" class="form-label">Pohlaví:</label>
             </div>
             <div>
-                <input id="pohlavi1" name="pohlavi" class="form-control" type="radio" value="CHLAPEC" [#if (formular.pohlavi?? && formular.pohlavi == "CHLAPEC")]checked="checked"[/#if]/>
+                <input id="pohlavi1" name="pohlavi" class="form-control" type="radio" value="CHLAPEC" [#if formular.pohlavi?? && formular.pohlavi=="CHLAPEC"]checked[/#if]/>
                 <label for="pohlavi1">Chlapec</label>
             </div>
             <div>
-                <input id="pohlavi2" name="pohlavi" class="form-control" type="radio" value="DIVKA" [#if (formular.pohlavi?? && formular.pohlavi == "DIVKA")]checked="checked"[/#if]/>
+                <input id="pohlavi2" name="pohlavi" class="form-control" type="radio" value="DIVKA" [#if formular.pohlavi?? && formular.pohlavi=="DIVKA"]checked[/#if]/>
                 <label for="pohlavi2">Dívka</label>
                 <br>
             </div>

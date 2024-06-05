@@ -1,27 +1,25 @@
-package cz.czechitas.java2webapps.ukol5.controller;
+package cz.czechitas.java2webapps.ukol5;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.ValidationException;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
-
 public class RegistraceForm {
-
     @NotBlank(message = "Jméno nesmí být prázdné!")
     private String jmeno;
 
     @NotBlank(message = "Příjmení nesmí být prázdné!")
     private String prijmeni;
 
-    @NotNull(message = "Datum narození je třeba vyplnit!")
+    @NotNull(message = "Datum narození nesmí být prázdné!")
     private LocalDate datumNarozeni;
 
-    @NotNull(message = "Zvolte pohlaví!")
-    private Pohlavi pohlavi;
+    @NotNull(message = "Pohlaví nesmí být prázdné!")
+    private String pohlavi;
 
-    @NotNull(message = "Vyberte prosím turnus!")
-    private Turnus turnus;
+    @NotBlank(message = "Turnus nesmí být prázdný!")
+    private String turnus;
 
     private String email;
 
@@ -51,19 +49,19 @@ public class RegistraceForm {
         this.datumNarozeni = datumNarozeni;
     }
 
-    public Pohlavi getPohlavi() {
+    public String getPohlavi() {
         return pohlavi;
     }
 
-    public void setPohlavi(Pohlavi pohlavi) {
+    public void setPohlavi(String pohlavi) {
         this.pohlavi = pohlavi;
     }
 
-    public Turnus getTurnus() {
+    public String getTurnus() {
         return turnus;
     }
 
-    public void setTurnus(Turnus turnus) {
+    public void setTurnus(String turnus) {
         this.turnus = turnus;
     }
 
@@ -81,5 +79,14 @@ public class RegistraceForm {
 
     public void setTelefon(String telefon) {
         this.telefon = telefon;
+    }
+
+    public void validujVek(){
+        if (datumNarozeni != null) {
+            int vek = datumNarozeni.until(LocalDate.now()).getYears();
+            if (vek < 9 || vek > 15) {
+                throw new ValidationException("Dítě musí být alespoň 9 let a nejvýše 15 let staré.");
+            }
+        }
     }
 }
