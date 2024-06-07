@@ -2,6 +2,7 @@ package cz.czechitas.java2webapps.ukol5;
 
 import jakarta.validation.ValidationException;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ public class RegistraceForm {
     private String prijmeni;
 
     @NotNull(message = "Datum narození nesmí být prázdné!")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate datumNarozeni;
 
     @NotNull(message = "Pohlaví nesmí být prázdné!")
