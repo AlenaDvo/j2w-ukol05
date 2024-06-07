@@ -16,10 +16,10 @@ public class RegistraceForm {
     private LocalDate datumNarozeni;
 
     @NotNull(message = "Pohlaví nesmí být prázdné!")
-    private String pohlavi;
+    private Pohlavi pohlavi;
 
-    @NotBlank(message = "Turnus nesmí být prázdný!")
-    private String turnus;
+    @NotNull(message = "Turnus nesmí být prázdný!")
+    private Turnus turnus;
 
     private String email;
 
@@ -49,19 +49,19 @@ public class RegistraceForm {
         this.datumNarozeni = datumNarozeni;
     }
 
-    public String getPohlavi() {
+    public Pohlavi getPohlavi() {
         return pohlavi;
     }
 
-    public void setPohlavi(String pohlavi) {
+    public void setPohlavi(Pohlavi pohlavi) {
         this.pohlavi = pohlavi;
     }
 
-    public String getTurnus() {
+    public Turnus getTurnus() {
         return turnus;
     }
 
-    public void setTurnus(String turnus) {
+    public void setTurnus(Turnus turnus) {
         this.turnus = turnus;
     }
 

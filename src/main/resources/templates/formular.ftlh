@@ -53,7 +53,7 @@
             </div>
             <div>
                 <input id="turnus2" name="turnus" class="form-control" type="radio" value="TURNUS_2" [#if (formular.turnus?? && formular.turnus == "TURNUS_2")]checked="checked"[/#if]/>
-                <label for="turnus2">Turnus od 15. do 30. 7. 2024</label>
+                <label for="turnus2">Turnus od 16. do 31. 7. 2024</label>
             </div>
             <div>
                 <input id="turnus3" name="turnus" class="form-control" type="radio" value="TURNUS_3" [#if (formular.turnus?? && formular.turnus == "TURNUS_3")]checked="checked"[/#if]/>

@@ -21,8 +21,8 @@
         Jméno: ${jmeno}<br>
         Příjmení: ${prijmeni}<br>
         Datum narození: ${datumNarozeni?date}<br>
-        Pohlaví: ${pohlavi}<br>
-        Turnus: ${turnus}<br>
+        Pohlaví: ${pohlavi.getNazevPohlavi()}<br>
+        Turnus: ${turnus.getNazevTurnusu()}<br>
         [#if email?? && email!=""]E-mail: ${email}<br>[/#if]
         [#if telefon?? && telefon!=""]Telefon: ${telefon}<br>[/#if]
     </div>
